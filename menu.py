@@ -1,6 +1,5 @@
 import pygame
 
-
 class Menu:
     def __init__(self, largura, altura):
         self.largura = largura
@@ -15,10 +14,12 @@ class Menu:
         titulo = self.fonte.render("WORMHOLE", True, (255, 255, 255))
         tela.blit(titulo, (self.largura // 2 - titulo.get_width() // 2, 100))
 
+        botao_start = pygame.draw.rect(tela, (0,255,0),(300, 185, 200, 50))
+        botao_sair = pygame.draw.rect(tela, (255, 0, 0), (350, 247, 100, 30))
         # Opções
         opcoes = [
-            "1 - Start/Resume",
-            "ESC - Sair"
+            "Start/Resume",
+            "Sair"
         ]
 
         for i, opcao in enumerate(opcoes):
